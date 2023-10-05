@@ -20,12 +20,11 @@ for (let i = 0; i < n; i++) {
   fs.writeFile(path, data, (err) => after_write(err, file));
 }
 
-function after_write(err) {
+function after_write(err, file) {
   if (err) {
     throw err;
   }
   console.log(`Finished Writing File ${file}`);
-  written++;
   if (written >= n) {
     console.log("Writing Complete");
   }
